@@ -19,7 +19,6 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeIcon, setActiveIcon] = useState("Candidates");
   const navigate = useNavigate();
   const [candidatesData, setCandidatesData] = useState([
     {
@@ -153,49 +152,28 @@ const Dashboard = () => {
       <div className="main-container">
         <aside className="sidebar">
           <div className="sidebar-menu">
-            <img
-              src={Recruitment}
-              alt="Recruitment"
-              onClick={() => setActiveIcon("Recruitment")}
-              className={activeIcon === "Recruitment" ? "active" : ""}
-            />
-            <img
-              src={Candidates}
-              alt="Candidates"
-              onClick={() => setActiveIcon("Candidates")}
-              className={activeIcon === "Candidates" ? "active" : ""}
-            />
+            <img src={Recruitment} alt="Recruitment" />
+            <img src={Candidates} alt="Candidates" className="active" />
             <img src={Organisation} alt="Organisation" />
             <img
               src={Employees}
               alt="Employees"
-              onClick={() => {
-                setActiveIcon("Employees");
-                navigate("/Employees");
-              }}
-              className={activeIcon === "Employees" ? "active" : ""}
+              onClick={() => navigate("/Employees")}
             />
             <img
               src={Attendance}
               alt="Attendance"
-              onClick={() => setActiveIcon("Attendance")}
-              className={activeIcon === "Attendance" ? "active" : ""}
+              onClick={() => navigate("/Attendance")}
             />
             <img
               src={leaves}
-              alt="Leaves"
-              onClick={() => setActiveIcon("leaves")}
-              className={activeIcon === "leaves" ? "active" : ""}
+              alt="leaves"
+              onClick={() => navigate("/Leaves")}
             />
             <img src={Others} alt="Others" />
           </div>
           <div className="sidebar-footer">
-            <img
-              src={logout}
-              alt="Logout"
-              onClick={() => navigate("/login")}
-              className={activeIcon === "logout" ? "active" : ""}
-            />
+            <img src={logout} alt="Logout" onClick={() => navigate("/login")} />
           </div>
         </aside>
 

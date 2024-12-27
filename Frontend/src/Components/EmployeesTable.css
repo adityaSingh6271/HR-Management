@@ -191,6 +191,10 @@
   transform: translateY(-50%);
 }
 
+.search-container {
+  margin-left: 600px;
+}
+
 .table-container {
   margin-left: 40px;
   background: white;

@@ -35,7 +35,7 @@ const Registration = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/register",
+        "http://localhost:5000/api/register",
         userData
       );
 

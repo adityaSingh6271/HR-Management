@@ -151,7 +151,11 @@ const EmployeesTable = () => {
             />
             <img src={Organisation} alt="Organisation" />
             <img src={Employees} alt="Employees" className="employee active" />
-            <img src={Attendance} alt="Attendance" />
+            <img
+              src={Attendance}
+              alt="Attendance"
+              onClick={() => navigate("/Attendance")}
+            />
             <img src={leaves} alt="leaves" />
             <img src={Others} alt="Others" />
           </div>
