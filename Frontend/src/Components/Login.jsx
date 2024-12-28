@@ -23,7 +23,7 @@ const Login = () => {
     try {
       // Send login request to the backend
       const response = await axios.post(
-        "https://hr-management-4kc7.onrender.com/api/login ",
+        "http://localhost:5000/api/login",
         userData,
         {
           withCredentials: true,

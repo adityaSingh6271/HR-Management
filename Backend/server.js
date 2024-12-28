@@ -16,18 +16,24 @@ app.use(cookieParser());
 
 // CORS Configuration
 const allowedOrigins = [
-  "https://adityaxhr-management-system.netlify.app/", // Deployed frontend
+  "https://adityaxhr-management-system.netlify.app", // Deployed frontend
   "http://localhost:5173", // Local frontend
+  "http://localhost:5175", // Add this origin
 ];
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Frontend URL
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
-  methods: ["GET", "POST", "OPTIONS"],
+  methods: ["GET", "POST", "OPTIONS"], // Ensure OPTIONS is allowed
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-// Apply CORS middleware
 app.use(cors(corsOptions));
 
 // Routes
