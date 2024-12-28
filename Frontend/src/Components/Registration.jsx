@@ -35,7 +35,7 @@ const Registration = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/register",
+        "https://hr-management-4kc7.onrender.com/api/register",
         userData
       );
 
