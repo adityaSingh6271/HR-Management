@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 // CORS Configuration
 const allowedOrigins = [
-  "https://adityaxhr-management.netlify.app", // Deployed frontend
+  "https://adityaxhr-management-system.netlify.app/", // Deployed frontend
   "http://localhost:5173", // Local frontend
 ];
 
